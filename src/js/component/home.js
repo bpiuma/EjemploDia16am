@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 export function Home() {
 	useEffect(() => {
 		obtenerPokemones();
-	}, []);
-	//fetch
-	let [pokeFetch, setPokeFetch] = useState([]);
-	let [pokeAsync, setPokeAsync] = useState([]);
+    }, []);
+    
+    //OPCION 1: fetch
+    
+	// let [pokeFetch, setPokeFetch] = useState([]);
 
 	// fetch("https://pokeapi.co/api/v2/pokemon")
 	// 	.then(res => res.json())
@@ -19,7 +16,9 @@ export function Home() {
 	// 	})
 	// 	.catch(error => console.log(error));
 
-	//async await
+    //OPCION2: async await (mejor práctica)
+    
+    let [pokeAsync, setPokeAsync] = useState([]);   
 
 	const obtenerPokemones = async () => {
 		try {
